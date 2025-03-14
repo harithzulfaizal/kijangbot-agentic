@@ -1,8 +1,8 @@
 import logging
 from typing import Any, List, Mapping
 
-from utils.chat_history import BufferedCosmosDBChatHistory
-from models.messages import UserRequest, BAgentResponse
+from app.core.utils.chat_history import BufferedCosmosDBChatHistory
+from app.core.models.messages import UserRequest, BAgentResponse
 
 from autogen_core import AgentId, MessageContext, RoutedAgent, message_handler
 from autogen_ext.models.openai import OpenAIChatCompletionClient
@@ -62,7 +62,7 @@ class BaseAgent(RoutedAgent):
             return BAgentResponse(
                 session_id=message.session_id,
                 user_id=self._user_id,
-                message=result,
+                content=result,
                 agent_id=self._agent_id,
                 agent_name=self._agent_name,
             )

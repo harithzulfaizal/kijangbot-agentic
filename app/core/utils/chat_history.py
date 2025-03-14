@@ -1,6 +1,9 @@
+import os
 from typing import List, Optional
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
 
-from config import Config
+from app.core.config import Config
 
 from autogen_core.model_context import BufferedChatCompletionContext
 from autogen_core.models import LLMMessage
@@ -19,5 +22,6 @@ class BufferedCosmosDBChatHistory(BufferedChatCompletionContext):
         self._cosmosdb_client = Config.get_cosmosdb_client()
         self._session_id = session_id
         self._user_id = user_id
+        self._client = MongoClient(os.getenv("MONGODB_URI"), server_api=ServerApi('1'))
 
     

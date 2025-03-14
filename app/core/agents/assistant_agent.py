@@ -4,10 +4,10 @@ import pytz
 
 pytz.timezone('Asia/Kuala_Lumpur')
 
-from agents.base_agent import BaseAgent
-from utils.chat_history import BufferedCosmosDBChatHistory
-from models.llm import chat_client
-from tools.web_search import get_relevant_web_pages
+from app.core.agents.base_agent import BaseAgent
+from app.core.utils.chat_history import BufferedCosmosDBChatHistory
+from app.core.models.llm import chat_client
+from app.core.tools.web_search import get_relevant_web_pages
 
 from autogen_core import AgentId, default_subscription
 from autogen_core import default_subscription

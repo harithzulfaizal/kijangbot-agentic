@@ -9,6 +9,6 @@ class UserRequest(BaseModel):
 class BAgentResponse(BaseModel):
     session_id: str
     user_id: str
-    message: str
+    content: str
     agent_id: str
     agent_name: str

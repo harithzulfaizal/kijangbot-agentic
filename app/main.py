@@ -4,7 +4,7 @@ from app.api import chat, upload_file, delete_file # Import your API routers
 from app.core.config import settings
 import dotenv
 
-dotenv.load_dotenv("../.env")
+dotenv.load_dotenv()
 
 app = FastAPI(title="Agentic LLM Chatbot API", version="1.0.0")
 
